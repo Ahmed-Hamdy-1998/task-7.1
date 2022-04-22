@@ -1,0 +1,19 @@
+import pandas as pd
+housing = pd.read_csv("/sample_data/california_housing.csv")
+print(housing.head())
+ 
+#output
+y= housing.median_income
+ 
+#input
+x=housing.drop('median_income',axis=1)
+ 
+#splitting
+x_train,x_teinst,y_train,y_test=train_test_split(x,y,test_size=0.2)
+ 
+#printing shapes of testing and training sets :
+print("shape of original dataset :", housing.shape)
+print("shape of input - training set", x_train.shape)
+print("shape of output - training set", y_train.shape)
+print("shape of input - testing set", x_test.shape)
+print("shape of output - testing set", y_test.shape)
